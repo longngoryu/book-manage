@@ -1,5 +1,9 @@
+import os
 from pathlib import Path
 import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-0boh45&kfwu!0b)5_#9+)pngn6#7)+*vxc)_q0qpr=a)9ngzlr"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -73,7 +77,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.parse(
-        "postgres://ryu:PDCLceNc8GrnTvwNfddGGc6AO37fV9Zy@dpg-ckrm0p85vl2c73fqauo0-a.oregon-postgres.render.com/book_manage"
+        os.getenv("DATABASE_URL")
     )
 }
 
