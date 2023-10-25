@@ -12,7 +12,7 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     quantity_in_stock = models.IntegerField()
     publication_date = models.DateField()
-    image_url = models.ImageField(upload_to="images/books/", null=True, blank=True)
+    image_url = models.ImageField(upload_to="static/images/books/", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True)
 
     def __str__(self):
