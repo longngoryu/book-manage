@@ -19,4 +19,5 @@
 ## library
 - pip freeze > requirements.txt
 
-
+## static file
+python manage.py collectstatic
